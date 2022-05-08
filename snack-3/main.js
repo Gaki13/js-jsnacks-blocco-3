@@ -31,3 +31,25 @@ function getRandomNumbersList(nElements, min, max) {
     }
     return numbers;
 }
+
+/*---------------------------
+    MAIN
+----------------------------*/
+// 1. creo un array di numeri
+const divGreen = document.querySelector("#green");
+const divRed = document.querySelector("#red");
+const arrayLength = getRandomNumber(10, 30);
+const numbers = getRandomNumbersList(arrayLength, 1, 100);
+// 2. attraverso l'array di numeri
+for(let i = 0; i < numbers.length; i++) {
+    const element = document.createElement("p");
+    element.innerHTML = numbers[i];
+    //  2b. verico se numbers[i] l'elemento è pari o dispari
+    if( isEven(numbers[i]) ) {
+        //  2c. SE l'elemento è pari lo inserisco nel div #green
+        divGreen.append(element);
+    } else {
+        // ALTRIMENTI lo in inserisco nel div #red
+        divRed.append(element);
+    }
+}
