@@ -8,6 +8,8 @@ for ( let i = 0; i < number; i++ ){
         const number = Math.floor(Math.random() * 100) + 1;
         arr.push(number);
     }
+    let element = document.querySelector("ul").innerHTML = arr
+
 }
 
 //3. Ogni array creato, stampalo a schermo
